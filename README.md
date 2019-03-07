@@ -39,5 +39,5 @@ python3 main.py -i My_1099B.pdf
 ```
 python3 tests.py
 
-python3 integration_tests.py --test_pdf_dir=path/to/pdfs
+python3 integration_tests.py path/to/test/pdfs
 ```
