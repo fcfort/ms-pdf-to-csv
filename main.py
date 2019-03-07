@@ -158,18 +158,17 @@ def smart_open(filename):
       fh.close()
 
 
-# takes file handles and completes pdf parsing
-# to output_fh. is responsible for closing 
-# output fh
+# takes file name in and fh out and completes pdf parsing
+# to output_fh. is responsible for closing output fh
 def fileBasedPdfParse(input_fn, output_fh):
   with output_fh as csvfile:
     writer = RecordWriter(csv.writer(csvfile))
     lp = LineProcessor(writer.write_record)
 
-  for l in subprocess.check_output(
-      ['pdftotext', '-raw', input_fn, '-'],
-      universal_newlines=True).split('\n'):
-    lp.ingest(l)
+    for l in subprocess.check_output(
+        ['pdftotext', '-raw', input_fn, '-'],
+        universal_newlines=True).split('\n'):
+      lp.ingest(l)
 
 
 if __name__ == "__main__":

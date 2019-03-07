@@ -4,7 +4,11 @@ Inspired by https://github.com/ntulpule/Schwab-1099B-Parser/blob/master/convert-
 
 # Prerequisites
 
-Needs `poppler/pdftotext`
+Needs `pdftotext` from `poppler-utils`. On Ubuntu:
+
+```
+sudo apt-get install poppler-utils
+```
 
 # Help
 
